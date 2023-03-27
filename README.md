@@ -41,10 +41,10 @@ CARLA Documentation：https://carla.readthedocs.io/en/latest/
 
 ​		**实验数据初步分析如下：**
 
-![ADASEEG](Src\ADASEEG.png)
+<img src="Src\ADASEEG.png" alt="ADAS" style="zoom: 67%;" />
 
 #### 实验架构
 
 本项目基于CARLA的C/S异步架构，主要代码在于Client端的修改（回调、代理模式），服务端只修改了语义分割相机的内容（取巧了场景的简化部分）。
 
-![系统架构](Src\系统架构.png)
+<img src="Src\系统架构.png" alt="系统" style="zoom: 67%;" />
