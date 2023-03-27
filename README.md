@@ -19,11 +19,11 @@ CARLA Documentation：https://carla.readthedocs.io/en/latest/
 
 		##### 2D雷达界面
 
-<img src="Src\2D.png" alt="2D" style="zoom: 50%;" />
+<img src="Src\2D.png" alt="2D" align="center" style="zoom: 50%;" />
 
 ##### 3D环境感知(该图是被监察视角)
 
-<img src="Src\3DUI.png" alt="3DUI" style="zoom: 67%;" />
+<img src="Src\3DUI.png" alt="3DUI" align="center" style="zoom: 67%;" />
 
 #### 项目搭建
 
