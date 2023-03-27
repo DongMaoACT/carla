@@ -13,15 +13,15 @@ CARLA Documentation：https://carla.readthedocs.io/en/latest/
 
 #### 功能预览
 
-##### 实时场景
+#### 实时场景
 
 <img src="Src\场景.png" alt="场景" style="zoom: 33%;" />
 
-##### 2D雷达界面
+#### 2D雷达界面
 <div align=center>
 <img src="Src\2D.png" alt="2D" align="center" style="zoom: 50%;" />
 </div>
-##### 3D环境感知(该图是被监察视角)
+#### 3D环境感知(该图是被监察视角)
 <div align=center>
 <img src="Src\3DUI.png" alt="3DUI" align="center" style="zoom: 67%;" />
 </div>
