@@ -21,12 +21,13 @@ CARLA Documentation：https://carla.readthedocs.io/en/latest/
 <div align=center>
 <img src="Src\2D.png" alt="2D" align="center" style="zoom: 50%;" />
 </div>
+
 #### 3D环境感知(该图是被监察视角)
 <div align=center>
 <img src="Src\3DUI.png" alt="3DUI" align="center" style="zoom: 67%;" />
 </div>
-#### 项目搭建
 
+#### 项目搭建
 ​		**直接拉取本地进行项目搭建，内包含了CARLA Simulator，但是CALRA特别版的Unreal 4.26 引擎需要自行编译构建。**（PS：因为部分Sever端的代码被修改过，不能直接拉取官方代码）
 
 ​		**Carla项目搭建：**https://carla.readthedocs.io/en/latest/build_windows/
