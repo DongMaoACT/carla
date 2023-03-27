@@ -17,7 +17,7 @@ CARLA Documentation：https://carla.readthedocs.io/en/latest/
 
 <img src="Src\场景.png" alt="场景" style="zoom: 33%;" />
 
-		##### 2D雷达界面
+##### 2D雷达界面
 <div align=center>
 <img src="Src\2D.png" alt="2D" align="center" style="zoom: 50%;" />
 </div>
