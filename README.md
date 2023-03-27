@@ -30,7 +30,7 @@ CARLA Documentation：https://carla.readthedocs.io/en/latest/
 #### 项目搭建
 ​		**直接拉取本地进行项目搭建，内包含了CARLA Simulator，但是CALRA特别版的Unreal 4.26 引擎需要自行编译构建。**（PS：因为部分Sever端的代码被修改过，不能直接拉取官方代码）
 
-​		**Carla项目搭建：**https://carla.readthedocs.io/en/latest/build_windows/
+​		Carla项目搭建：https://carla.readthedocs.io/en/latest/build_windows/
 
 ​		按照Make工具进行构建完成之后，建议make package打包项目，然后运行Sever。
 
