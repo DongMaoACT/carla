@@ -58,6 +58,7 @@ class DisplayManager:
 
         self.grid_size = grid_size
         self.window_size = window_size
+        print(window_size)
         self.sensor_list = []
 
     def get_window_size(self):
@@ -109,10 +110,11 @@ class SensorManager:
 
     def init_sensor(self, sensor_type, transform, attached, sensor_options):
         if sensor_type == 'RGBCamera':
-            camera_bp = self.world.get_blueprint_library().find('sensor.camera.rgb')
+            camera_bp = self.world.get_blueprint_library().find('sensor.camera.semantic_segmentation')
             disp_size = self.display_man.get_display_size()
             camera_bp.set_attribute('image_size_x', str(disp_size[0]))
             camera_bp.set_attribute('image_size_y', str(disp_size[1]))
+            camera_bp.set_attribute("sensor_tick",  str(0.06))
 
             for key in sensor_options:
                 camera_bp.set_attribute(key, sensor_options[key])
@@ -170,14 +172,24 @@ class SensorManager:
     def save_rgb_image(self, image):
         t_start = self.timer.time()
 
-        image.convert(carla.ColorConverter.Raw)
+        image.convert(carla.ColorConverter.CityScapesPalette)
         array = np.frombuffer(image.raw_data, dtype=np.dtype("uint8"))
         array = np.reshape(array, (image.height, image.width, 4))
+     
         array = array[:, :, :3]
-        array = array[:, :, ::-1]
+        print(array)
+        #arr = array[:, :, ::-1]
+        #print(array)
+        #array.flags.writeable = True
+        
+
+        arr = array.copy()
+        arr[arr > 0] = 255
+        print(array.size)
+ 
 
         if self.display_man.render_enabled():
-            self.surface = pygame.surfarray.make_surface(array.swapaxes(0, 1))
+            self.surface = pygame.surfarray.make_surface(arr.swapaxes(0, 1))
 
         t_end = self.timer.time()
         self.time_processing += (t_end-t_start)
@@ -285,23 +297,23 @@ def run_simulation(args, client):
 
         # Display Manager organize all the sensors an its display in a window
         # If can easily configure the grid and the total window size
-        display_manager = DisplayManager(grid_size=[2, 3], window_size=[args.width, args.height])
+        display_manager = DisplayManager(grid_size=[1, 1], window_size=[args.width, args.height])
 
         # Then, SensorManager can be used to spawn RGBCamera, LiDARs and SemanticLiDARs as needed
         # and assign each of them to a grid position, 
-        SensorManager(world, display_manager, 'RGBCamera', carla.Transform(carla.Location(x=0, z=2.4), carla.Rotation(yaw=-90)), 
+        SensorManager(world, display_manager, 'RGBCamera', carla.Transform(carla.Location(x=-8.0, z=3.6), carla.Rotation(pitch=-20)), 
                       vehicle, {}, display_pos=[0, 0])
-        SensorManager(world, display_manager, 'RGBCamera', carla.Transform(carla.Location(x=0, z=2.4), carla.Rotation(yaw=+00)), 
-                      vehicle, {}, display_pos=[0, 1])
-        SensorManager(world, display_manager, 'RGBCamera', carla.Transform(carla.Location(x=0, z=2.4), carla.Rotation(yaw=+90)), 
-                      vehicle, {}, display_pos=[0, 2])
-        SensorManager(world, display_manager, 'RGBCamera', carla.Transform(carla.Location(x=0, z=2.4), carla.Rotation(yaw=180)), 
-                      vehicle, {}, display_pos=[1, 1])
+        #SensorManager(world, display_manager, 'RGBCamera', carla.Transform(carla.Location(x=0, z=2.4), carla.Rotation(yaw=+00)), 
+                      #vehicle, {}, display_pos=[0, 1])
+        #SensorManager(world, display_manager, 'RGBCamera', carla.Transform(carla.Location(x=0, z=2.4), carla.Rotation(yaw=+90)), 
+                      #vehicle, {}, display_pos=[0, 2])
+        #SensorManager(world, display_manager, 'RGBCamera', carla.Transform(carla.Location(x=0, z=2.4), carla.Rotation(yaw=180)), 
+                      #vehicle, {}, display_pos=[1, 1])
 
-        SensorManager(world, display_manager, 'LiDAR', carla.Transform(carla.Location(x=0, z=2.4)), 
-                      vehicle, {'channels' : '64', 'range' : '100',  'points_per_second': '250000', 'rotation_frequency': '20'}, display_pos=[1, 0])
-        SensorManager(world, display_manager, 'SemanticLiDAR', carla.Transform(carla.Location(x=0, z=2.4)), 
-                      vehicle, {'channels' : '64', 'range' : '100', 'points_per_second': '100000', 'rotation_frequency': '20'}, display_pos=[1, 2])
+        #SensorManager(world, display_manager, 'LiDAR', carla.Transform(carla.Location(x=0, z=2.4)), 
+                      #vehicle, {'channels' : '64', 'range' : '100',  'points_per_second': '250000', 'rotation_frequency': '20'}, display_pos=[1, 0])
+       # SensorManager(world, display_manager, 'SemanticLiDAR', carla.Transform(carla.Location(x=0, z=2.4)), 
+                      #vehicle, {'channels' : '64', 'range' : '100', 'points_per_second': '100000', 'rotation_frequency': '20'}, display_pos=[1, 2])
 
 
         #Simulation loop
@@ -365,7 +377,7 @@ def main():
     argparser.add_argument(
         '--res',
         metavar='WIDTHxHEIGHT',
-        default='1280x720',
+        default='640x480',
         help='window resolution (default: 1280x720)')
 
     args = argparser.parse_args()

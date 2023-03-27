@@ -18,37 +18,35 @@ namespace detail {
 #endif
     // Please update documentation if you change this.
     uint8_t CITYSCAPES_PALETTE_MAP[][3u] = {
-        {  0u,   0u,   0u},   // unlabeled     =   0u
-        // cityscape
-        {128u,  64u, 128u},   // road          =   1u
-        {244u,  35u, 232u},   // sidewalk      =   2u
-        { 70u,  70u,  70u},   // building      =   3u
-        {102u, 102u, 156u},   // wall          =   4u
-        {190u, 153u, 153u},   // fence         =   5u
-        {153u, 153u, 153u},   // pole          =   6u
-        {250u, 170u,  30u},   // traffic light =   7u
-        {220u, 220u,   0u},   // traffic sign  =   8u
-        {107u, 142u,  35u},   // vegetation    =   9u
-        {152u, 251u, 152u},   // terrain       =  10u
-        { 70u, 130u, 180u},   // sky           =  11u
-        {220u,  20u,  60u},   // pedestrian    =  12u
-        {255u,   0u,   0u},   // rider         =  13u
-        {  0u,   0u, 142u},   // Car           =  14u
-        {  0u,   0u,  70u},   // truck         =  15u
-        {  0u,  60u, 100u},   // bus           =  16u
-        {  0u,  80u, 100u},   // train         =  17u
-        {  0u,   0u, 230u},   // motorcycle    =  18u
-        {119u,  11u,  32u},   // bicycle       =  19u
-        // custom
-        {110u, 190u, 160u},   // static        =  20u
-        {170u, 120u,  50u},   // dynamic       =  21u
-        { 55u,  90u,  80u},   // other         =  22u
-        { 45u,  60u, 150u},   // water         =  23u
-        {157u, 234u,  50u},   // road line     =  24u
-        { 81u,   0u,  81u},   // ground        =  25u
-        {150u, 100u, 100u},   // bridge        =  26u
-        {230u, 150u, 140u},   // rail track    =  27u
-        {180u, 165u, 180u}    // guard rail    =  28u
+        {96u,   96u,  96u},      // unlabeled     =   0u
+        {192u,  192u, 192u},     // road          =   1u
+        {96u,   96u,  96u},      // sidewalk      =   2u
+        {96u,   96u,  96u},      // building      =   3u
+        {96u,   96u,  96u},      // wall          =   4u
+        {96u,   96u,  96u},      // fence         =   5u
+        {96u,   96u,  96u},      // pole          =   6u
+        {96u,   96u,  96u},      // traffic light =   7u
+        {96u,   96u,  96u},      // traffic sign  =   8u
+        {96u,   96u,  96u},      // vegetation    =   9u
+        {96u,   96u,  96u},      // terrain       =  10u
+        {96u,   96u,  96u},      // sky           =  11u
+        {0u,    0u,   0u},       // pedestrian    =  12u
+        {0u,    0u,   0u},       // rider         =  13u
+        {0u,    0u,   0u},       // Car           =  14u
+        {0u,    0u,   0u},       // truck         =  15u
+        {0u,    0u,   0u},       // bus           =  16u
+        {0u,    0u,   0u},       // train         =  17u
+        {0u,    0u,   0u},       // motorcycle    =  18u
+        {0u,    0u,   0u},       // bicycle       =  19u
+        {96u,   96u,  96u},      // static        =  20u
+        {96u,   96u,  96u},      // dynamic       =  21u
+        {96u,   96u,  96u},      // other         =  22u
+        {96u,   96u,  96u},      // water         =  23u
+        {96u,   96u,  96u},      // road line     =  24u
+        {96u,   96u,  96u},      // ground        =  25u
+        {96u,   96u,  96u},      // bridge        =  26u
+        {96u,   96u,  96u},      // rail track    =  27u
+        {96u,   96u,  96u},      // guard rail    =  28u
       };
 
 } // namespace detail

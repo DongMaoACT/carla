@@ -279,7 +279,6 @@ FString ATagger::GetTagAsString(const crp::CityObjectLabel Label)
     CARLA_GET_LABEL_STR(Bus)
     CARLA_GET_LABEL_STR(Train)
     CARLA_GET_LABEL_STR(Rider)
-
 #undef CARLA_GET_LABEL_STR
   }
 }

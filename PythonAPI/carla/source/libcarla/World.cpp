@@ -233,6 +233,18 @@ void export_world() {
     .value("Train", cr::CityObjectLabel::Train)
     .value("Any", cr::CityObjectLabel::Any)
   ;
+  
+//    enum_<cr::CityObjectLabel>("CityObjectLabel")
+//     .value("Actors", cr::CityObjectLabel::Actors)
+//     .value("Roads", cr::CityObjectLabel::Roads)
+//     .value("RoadLines", cr::CityObjectLabel::RoadLines)
+//     .value("Ground", cr::CityObjectLabel::Ground)
+//     .value("TrafficLight", cr::CityObjectLabel::TrafficLight)
+//     .value("TrafficSigns", cr::CityObjectLabel::TrafficSigns)
+//     .value("Sidewalks", cr::CityObjectLabel::Sidewalks)
+//     .value("Others", cr::CityObjectLabel::Others)
+//     .value("Any", cr::CityObjectLabel::Any)
+//   ;
 
   class_<cr::LabelledPoint>("LabelledPoint", no_init)
     .def_readonly("location", &cr::LabelledPoint::_location)

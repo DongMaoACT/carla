@@ -48,6 +48,17 @@ namespace rpc {
 
     Any          =  0xFF
   };
+  // enum class CityObjectLabel : uint8_t {
+  //   Actors        =   0u,
+  //   Roads         =   1u,
+  //   RoadLines     =   2u,
+  //   Ground        =   3u,
+  //   TrafficLight  =   4u,
+  //   TrafficSigns  =   5u,
+  //   Sidewalks     =   6u,
+  //   Others        =   7u,
+  //   Any           =   0xFF
+  // };
 
 } // namespace rpc
 } // namespace carla

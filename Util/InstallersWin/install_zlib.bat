@@ -69,10 +69,6 @@ if exist "%ZLIB_INSTALL_DIR%" (
 
 if not exist "%ZLIB_SRC_DIR%" (
     if not exist "%ZLIB_TEMP_FILE_DIR%" (
-        echo %FILE_N% Retrieving %ZLIB_BASENAME%.
-        powershell -Command "(New-Object System.Net.WebClient).DownloadFile('%ZLIB_REPO%', '%ZLIB_TEMP_FILE_DIR%')"
-    )
-    if not exist "%ZLIB_TEMP_FILE_DIR%" (
         echo %FILE_N% Retrieving %ZLIB_BASENAME% from backup.
         powershell -Command "(New-Object System.Net.WebClient).DownloadFile('%ZLIB_BACKUP_REPO%', '%ZLIB_TEMP_FILE_DIR%')"
     )
@@ -180,3 +176,4 @@ rem ============================================================================
     echo %FILE_N% Exiting with error...
     endlocal
     exit /b %errorlevel%
+
