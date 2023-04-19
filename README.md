@@ -7,6 +7,12 @@ CARLA Simulator：https://github.com/carla-simulator/carla
 
 CARLA Documentation：https://carla.readthedocs.io/en/latest/
 
+视频演示（该视频为项目中期视频，不包含3d adas应用）
+
+https://user-images.githubusercontent.com/81357596/232958989-893304c3-a3ea-4722-bed0-8a15dd986532.mp4
+
+
+
 项目介绍
 
 **本项目旨在探究不同人车交互方式的ADAS应用在使用方面的正反馈性（能够为驾驶员提供有效信息并提升驾驶感受），进而设计了力反馈装置震动、语音提示、2D雷达界面、环境感知的3D场景四种不同的反馈模式。并设计交通场景（如通过无信号的十字交叉路口），通过招募式的实验测试，采集受测者的力反馈装置操纵数据和脑电波数据，通过数据集的相关性分析，判断不同反馈模式的ADAS应用的正反馈性。**
